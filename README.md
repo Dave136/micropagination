@@ -1,41 +1,39 @@
 # Micropagination
-Pagination component and composable to simplify pagination
+Pagination component and composable to simplify pagination in vue3
 
 ### Getting started
 
 You can install using any package manager
 
 ```sh
-npm install --save vue3-pagination
+npm install --save micropagination
 ```
 
 With yarn:
 ```sh
-yarn add vue3-pagination
+yarn add micropagination
 ```
 
 With pnpm:
 ```sh
-pnpm add vue3-pagination
+pnpm add micropagination
 ```
 
 Then, you can import the component
 
 ```ts
-import VuePagination from 'vue3-pagination';
+import Micropagination from 'micropagination';
 ```
 
 And use it in your project:
 
 ```javascript
 <template>
-   <vue-pagination
-      @change="changePage"
-   />
+   <Micropagination @change="changePage" />
 </template>
 
 <script lang="ts" setup>
-import VuePagination from 'vue3-pagination';
+import Micropagination from 'micropagination';
 
 const changePage = (page: number) => console.log('New page: ', page);
 </script>
@@ -89,7 +87,7 @@ const changePage = (page: number) => console.log('New page: ', page);
 Slots:
 ```javascript
 <template>
-  <vue-pagination
+  <Micropagination
     @change="handleChange"
     currentPage="2"
     perPage="5"
@@ -101,7 +99,7 @@ Slots:
     <template v-slot:next-button>
       <div>next</div>
     </template>
-  </vue3-paginator>
+  </Micropagination>
 </template>
 ```
 
@@ -145,7 +143,7 @@ This package also provides a `usePagination` composable to handle the pagination
     </li>
   </ul>
   <hr />
-  <VuePagination
+  <Micropagination
     :current-page="page"
     :per-page="perPage"
     :total="total"
@@ -155,7 +153,7 @@ This package also provides a `usePagination` composable to handle the pagination
 </template>
 
 <script setup lang="ts">
-import VuePagination, { usePagination, type CallbackParams } from "vue-pagination";
+import Micropagination, { usePagination, type CallbackParams } from "micropagination";
 import { unref } from "vue";
 
 type Data = {
